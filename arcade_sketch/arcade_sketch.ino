@@ -1,5 +1,8 @@
 #include <Keyboard.h>
 
+int analogPin0 = 0;
+int analogPin1 = 1;
+  
 void setup() {
 
   Keyboard.begin();
@@ -17,9 +20,6 @@ void setup() {
   pinMode(10, INPUT_PULLUP);
   pinMode(11, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
-  
-  int analogPin0 = 0;
-  int analogPin1 = 1;
   
   Serial.begin(9600);
 }  
@@ -40,8 +40,8 @@ void loop() {
   int p1ayer2_button2 = digitalRead(11);
   int coin = digitalRead(12);
   
-  valAnalogPin0 = analogRead(analogPin0);
-  valAnalogPin1 = analogRead(analogPin1);
+  int valAnalogPin0 = (analogRead(analogPin0) + 128) / 256;
+  int valAnalogPin1 = (analogRead(analogPin1) + 128) / 256;
   
   if (p1ayer1_joystickUp == LOW) {
     Keyboard.press(KEY_UP_ARROW);
@@ -104,9 +104,38 @@ void loop() {
     Keyboard.release("s");
   }  
   if (coin == LOW) {
-    Keyboard.press(0x20);
+    Keyboard.press(0x20); // Space
   } else {
     Keyboard.release(0x20);
   }
-  
+  if (valAnalogPin0 == 0) {
+    Keyboard.press("g");
+  } else {
+    Keyboard.release("g");
+  }
+  if (valAnalogPin0 == 1) {
+    Keyboard.press(0x0D); // Enter
+  } else {
+    Keyboard.release(0x0D);
+  }
+  if (valAnalogPin0 == 2) {
+    Keyboard.press("x");
+  } else {
+    Keyboard.release("x");
+  }
+  if (valAnalogPin0 == 3) {
+    Keyboard.press("y");
+  } else {
+    Keyboard.release("y");
+  }
+  if (valAnalogPin1 == 0) {
+    Keyboard.press("q");
+  } else {
+    Keyboard.release("q");
+  }
+  if (valAnalogPin1 == 3) {
+    Keyboard.press("z");
+  } else {
+    Keyboard.release("z");
+  }  
 }
