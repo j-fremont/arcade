@@ -2,16 +2,17 @@
 
 void setup() {
   Keyboard.begin();
+  pinMode(0, INPUT_PULLUP);
   Serial.begin(9600);
 }
 
 void loop() {
   int test = digitalRead(0);
 
-  /*if (test == LOW) {
-    Keyboard.press("o");
+  if (test == LOW) {
+    Keyboard.press('u'); // "u"
   } else {
-    Keyboard.release("o");
-  }*/
+    Keyboard.release('u'); // "u"
+  }
 
 }

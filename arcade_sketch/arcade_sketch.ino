@@ -67,54 +67,54 @@ void loop() {
     Keyboard.release(KEY_RIGHT_ARROW);
   }
   if (player1_button_a == LOW) {
-    Keyboard.press("u");
+    Keyboard.press('u');
   } else {
-    Keyboard.release("u");
+    Keyboard.release('u');
   }
   if (player1_button_b == LOW) {
-    Keyboard.press("h");
+    Keyboard.press('h');
   } else {
-    Keyboard.release("h");
+    Keyboard.release('h');
   }
   if (player1_button_y == LOW) {
-    Keyboard.press("g");
+    Keyboard.press('g');
   } else {
-    Keyboard.release("g");
+    Keyboard.release('g');
   }
   if (player2_joystickUp == LOW) {
-    Keyboard.press("i");
+    Keyboard.press('i');
   } else {
-    Keyboard.release("i");
+    Keyboard.release('i');
   }
   if (player2_joystickDown == LOW) {
-    Keyboard.press("k");
+    Keyboard.press('k');
   } else {
-    Keyboard.release("k");
+    Keyboard.release('k');
   }
   if (player2_joystickLeft == LOW) {
-    Keyboard.press("j");
+    Keyboard.press('j');
   } else {
-    Keyboard.release("j");
+    Keyboard.release('j');
   }
   if (player2_joystickRight == LOW) {
-    Keyboard.press("l");
+    Keyboard.press('l');
   } else {
-    Keyboard.release("l");
+    Keyboard.release('l');
   }
   if (player2_button_a == LOW) {
-    Keyboard.press("e");
+    Keyboard.press('e');
   } else {
-    Keyboard.release("e");
+    Keyboard.release('e');
   }
   if (player2_button_b == LOW) {
-    Keyboard.press("s");
+    Keyboard.press('s');
   } else {
-    Keyboard.release("s");
+    Keyboard.release('s');
   }
   if (player1_button_y == LOW) {
-    Keyboard.press("q");
+    Keyboard.press('q');
   } else {
-    Keyboard.release("q");
+    Keyboard.release('q');
   }
   if (valAnalogPin0 == 0) {
     Keyboard.press(0x0D); // Enter
@@ -127,18 +127,18 @@ void loop() {
     Keyboard.release(0x20);
   }
   if (valAnalogPin0 == 2) {
-    Keyboard.press("x");
+    Keyboard.press('x');
   } else {
-    Keyboard.release("x");
+    Keyboard.release('x');
   }
   if (valAnalogPin1 == 0) {
-    Keyboard.press("y");
+    Keyboard.press('y');
   } else {
-    Keyboard.release("y");
+    Keyboard.release('y');
   }
   if (valAnalogPin1 == 2) {
-    Keyboard.press("z");
+    Keyboard.press('z');
   } else {
-    Keyboard.release("z");
+    Keyboard.release('z');
   }  
 }
