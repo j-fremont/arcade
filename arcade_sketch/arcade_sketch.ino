@@ -111,10 +111,10 @@ void loop() {
   } else {
     Keyboard.release('s');
   }
-  if (player1_button_y == LOW) {
-    Keyboard.press('q');
+  if (player2_button_y == LOW) {
+    Keyboard.press('c');
   } else {
-    Keyboard.release('q');
+    Keyboard.release('c');
   }
   if (valAnalogPin0 == 0) {
     Keyboard.press(0x0D); // Enter
@@ -137,8 +137,8 @@ void loop() {
     Keyboard.release('y');
   }
   if (valAnalogPin1 == 2) {
-    Keyboard.press('z');
+    Keyboard.press('v');
   } else {
-    Keyboard.release('z');
-  }  
+    Keyboard.release('v');
+  }
 }
