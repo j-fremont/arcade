@@ -20,7 +20,6 @@ void setup() {
   pinMode(10, INPUT_PULLUP);
   pinMode(11, INPUT_PULLUP);
   pinMode(12, INPUT_PULLUP);
-  pinMode(13, INPUT_PULLUP);
   
   Serial.begin(9600);
 }  
@@ -34,14 +33,12 @@ void loop() {
   int player1_button_a = digitalRead(4);
   int player1_button_y = digitalRead(5);
   int player1_button_b = digitalRead(6);
- 
   int player2_joystickRight = digitalRead(7);
   int player2_joystickUp = digitalRead(8);
   int player2_joystickLeft = digitalRead(9);
   int player2_joystickDown = digitalRead(10);
   int player2_button_a = digitalRead(11);
   int player2_button_y = digitalRead(12);
-  int player2_button_b = digitalRead(13);
 
   int valAnalogPin0 = (analogRead(analogPin0) + 128) / 256;
   int valAnalogPin1 = (analogRead(analogPin1) + 128) / 256;
@@ -106,20 +103,15 @@ void loop() {
   } else {
     Keyboard.release('e');
   }
-  if (player2_button_b == LOW) {
-    Keyboard.press('s');
-  } else {
-    Keyboard.release('s');
-  }
   if (player2_button_y == LOW) {
     Keyboard.press('c');
   } else {
     Keyboard.release('c');
   }
   if (valAnalogPin0 == 0) {
-    Keyboard.press(0x0D); // Enter
+    Keyboard.press('b');
   } else {
-    Keyboard.release(0x0D);
+    Keyboard.release('b');
   }
   if (valAnalogPin0 == 1) {
     Keyboard.press(0x20); // Space
@@ -135,6 +127,11 @@ void loop() {
     Keyboard.press('y');
   } else {
     Keyboard.release('y');
+  }
+  if (valAnalogPin1 == 1) {
+    Keyboard.press('s');
+  } else {
+    Keyboard.release('s');
   }
   if (valAnalogPin1 == 2) {
     Keyboard.press('v');
