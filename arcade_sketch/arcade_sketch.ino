@@ -38,7 +38,7 @@ void loop() {
   int player2_joystickLeft = digitalRead(9);
   int player2_joystickDown = digitalRead(10);
   int player2_button_a = digitalRead(11);
-  int player2_button_y = digitalRead(12);
+  int coins = digitalRead(12);
 
   int valAnalogPin0 = (analogRead(analogPin0) + 128) / 256;
   int valAnalogPin1 = (analogRead(analogPin1) + 128) / 256;
@@ -103,10 +103,10 @@ void loop() {
   } else {
     Keyboard.release('e');
   }
-  if (player2_button_y == LOW) {
-    Keyboard.press('c');
+  if (coins == LOW) {
+    Keyboard.press(0x20); // Space
   } else {
-    Keyboard.release('c');
+    Keyboard.release(0x20);
   }
   if (valAnalogPin0 == 0) {
     Keyboard.press('b');
@@ -114,9 +114,9 @@ void loop() {
     Keyboard.release('b');
   }
   if (valAnalogPin0 == 1) {
-    Keyboard.press(0x20); // Space
+    Keyboard.press('c');
   } else {
-    Keyboard.release(0x20);
+    Keyboard.release('c');
   }
   if (valAnalogPin0 == 2) {
     Keyboard.press('x');
