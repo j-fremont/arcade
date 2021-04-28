@@ -39,7 +39,7 @@ void loop() {
   int player2_joystickDown = digitalRead(10);
   int player2_button_a = digitalRead(11);
   int coins = digitalRead(12);
-
+  
   int valAnalogPin0 = (analogRead(analogPin0) + 128) / 256;
   int valAnalogPin1 = (analogRead(analogPin1) + 128) / 256;
   
@@ -129,9 +129,9 @@ void loop() {
     Keyboard.release('y');
   }
   if (valAnalogPin1 == 1) {
-    Keyboard.press('s');
+    Keyboard.press('d');
   } else {
-    Keyboard.release('s');
+    Keyboard.release('d');
   }
   if (valAnalogPin1 == 2) {
     Keyboard.press('v');
